@@ -8,12 +8,12 @@ resource "aws_iam_role" "github_actions_role" {
         Action = "sts:AssumeRole"
         Effect = "Allow"
         Principal = {
-          Federated: "arn:aws:iam::${var.account_id}:oidc-provider/token.actions.githubusercontent.com"
+          Federated : "arn:aws:iam::${var.account_id}:oidc-provider/token.actions.githubusercontent.com"
         },
         Condition = {
           StringEquals = {
-            "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub": "repo:${var.gh_username}/rsschool-devops-course-tasks:ref:refs/heads/main"
+            "token.actions.githubusercontent.com:aud" : "sts.amazonaws.com",
+            "token.actions.githubusercontent.com:sub" : "repo:${var.gh_username}/rsschool-devops-course-tasks:ref:refs/heads/main"
           }
         }
       },
