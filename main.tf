@@ -11,9 +11,11 @@ resource "aws_iam_role" "github_actions_role" {
           Federated : "arn:aws:iam::${var.account_id}:oidc-provider/token.actions.githubusercontent.com"
         },
         Condition = {
-          StringEquals = {
-            "token.actions.githubusercontent.com:aud" : "sts.amazonaws.com",
-            "token.actions.githubusercontent.com:sub" : "repo:${var.gh_username}/rsschool-devops-course-tasks:ref:refs/heads/main"
+          StringLike : {
+            "token.actions.githubusercontent.com:sub" : "repo:${var.gh_username}/rsschool-devops-course-tasks:*"
+          },
+          StringEquals : {
+            "token.actions.githubusercontent.com:aud" : "sts.amazonaws.com"
           }
         }
       },
