@@ -11,3 +11,7 @@ variable "user_profile_name" {
   type      = string
   sensitive = true
 }
+
+variable "pipeline" {
+  type = bool
+}

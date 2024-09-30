@@ -14,10 +14,7 @@ terraform {
   }
 }
 
-
-
 provider "aws" {
-  region                   = "us-east-1"
-  shared_credentials_files = ["~/.aws/credentials"]
-  profile                  = var.user_profile_name
+  region  = "us-east-1"
+  profile = var.pipeline ? "" : var.user_profile_name
 }
