@@ -7,17 +7,14 @@ terraform {
   }
 
   backend "s3" {
-    bucket         	   = "devopscourse-tfstate"
-    key                = "state/terraform.tfstate"
-    region         	   = "us-east-1"
-    encrypt        	   = true
+    bucket  = "devopscourse-tfstate"
+    key     = "state/terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
   }
 }
 
-
-
 provider "aws" {
-  region = "us-east-1"
-  shared_credentials_files = ["~/.aws/credentials"]
-  profile = var.user_profile_name
+  region  = "us-east-1"
+  profile = var.pipeline ? "" : var.user_profile_name
 }
