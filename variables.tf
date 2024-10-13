@@ -17,26 +17,26 @@ variable "pipeline" {
 }
 
 variable "vpc_cidr" {
-  default     = "10.0.0.0/16"
+  default = "10.0.0.0/16"
 }
 
 variable "public_subnet_1_cidr" {
-  default     = "10.0.5.0/24"
+  default = "10.0.5.0/24"
 }
 
 variable "public_subnet_2_cidr" {
-  default     = "10.0.6.0/24"
+  default = "10.0.6.0/24"
 }
 
 variable "private_subnet_1_cidr" {
-  default     = "10.0.7.0/24"
+  default = "10.0.7.0/24"
 }
 
 variable "private_subnet_2_cidr" {
-  default     = "10.0.8.0/24"
+  default = "10.0.8.0/24"
 }
 
 variable "az" {
-  type        = list(string)
-  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+  type    = list(string)
+  default = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }

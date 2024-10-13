@@ -59,7 +59,10 @@ resource "aws_iam_role_policy_attachment" "eventbridge_full_access" {
 }
 
 resource "aws_vpc" "terraform_course_main_vpc" {
-  cidr_block = var.vpc_cidr
+  cidr_block           = var.vpc_cidr
   enable_dns_support   = true
   enable_dns_hostnames = true
+  tags = {
+    Name = "terraform_course_main_vpc"
+  }
 }
