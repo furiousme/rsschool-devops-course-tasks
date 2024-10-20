@@ -40,3 +40,13 @@ variable "az" {
   type    = list(string)
   default = ["us-east-1a", "us-east-1b", "us-east-1c"]
 }
+
+variable "ip_address" {
+  type      = string
+  sensitive = true
+}
+
+variable "ec2_key_name" {
+  type      = string
+  sensitive = true
+}
