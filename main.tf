@@ -57,3 +57,12 @@ resource "aws_iam_role_policy_attachment" "eventbridge_full_access" {
   role       = aws_iam_role.github_actions_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEventBridgeFullAccess"
 }
+
+resource "aws_vpc" "terraform_course_main_vpc" {
+  cidr_block           = var.vpc_cidr
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+  tags = {
+    Name = "terraform_course_main_vpc"
+  }
+}
