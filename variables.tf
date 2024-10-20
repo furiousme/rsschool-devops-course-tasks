@@ -50,3 +50,8 @@ variable "ec2_key_name" {
   type      = string
   sensitive = true
 }
+
+variable "k8s_token" {
+  type      = string
+  sensitive = true
+}

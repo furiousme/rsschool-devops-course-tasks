@@ -1,5 +1,5 @@
 resource "aws_instance" "terraform_course_bastion" {
-  ami             = "ami-06b21ccaeff8cd686"
+  ami             = "ami-0ddc798b3f1a5117e"
   instance_type   = "t2.micro"
   subnet_id       = aws_subnet.terraform_course_public_subnet_1.id
   key_name        = var.ec2_key_name
@@ -14,3 +14,4 @@ output "terraform_course_bastion_ip_addr" {
   value     = aws_instance.terraform_course_bastion.public_ip
   sensitive = true
 }
+
