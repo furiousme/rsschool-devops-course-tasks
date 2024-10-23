@@ -51,7 +51,12 @@ variable "ec2_key_name" {
   sensitive = true
 }
 
-variable "k8s_token" {
+variable "k3s_token" {
   type      = string
   sensitive = true
+}
+
+variable "ami" {
+  type    = string
+  default = "ami-06b21ccaeff8cd686"
 }

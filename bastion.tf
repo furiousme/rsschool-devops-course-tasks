@@ -1,5 +1,5 @@
 resource "aws_instance" "terraform_course_bastion" {
-  ami             = "ami-0ddc798b3f1a5117e"
+  ami             = var.ami
   instance_type   = "t2.micro"
   subnet_id       = aws_subnet.terraform_course_public_subnet_1.id
   key_name        = var.ec2_key_name
